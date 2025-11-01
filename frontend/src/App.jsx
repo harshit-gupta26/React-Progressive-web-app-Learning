@@ -10,6 +10,12 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import FAQ from "./pages/FAQ";
 import CourseDetail from "./pages/components/CourseDetail";
+import Notes from "./pages/Notes";
+import Tutorials from "./pages/Tutorials";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+
+
 
 
 function App() {
@@ -26,13 +32,20 @@ function App() {
         <Route path="/Privacy" element={<PrivacyPolicy />} />
         <Route path="/Terms" element={<Terms />} />
         <Route path="/FAQ" element={<FAQ />} />
+        <Route path="/course/:id" element={<CourseDetail />} />{" "}
+        <Route path="/notes" element={<Notes />} />
+        <Route path="/tutorials" element={<Tutorials />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
 
-        {/* <Route path="/" element={<CoursesList />} /> */}
-        <Route path="/course/:id" element={<CourseDetail />} /> {/* ✅ new route */}
+
+
+
+    
+
+
       </Routes>
-
     </Router>
-
   );
 }
 

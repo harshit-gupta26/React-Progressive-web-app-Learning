@@ -9,11 +9,8 @@
   background: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   z-index: 1000;
-  font-family: 'Poppins', sans-serif; /* Added font family */
-
+  font-family: "Poppins", sans-serif; /* Added font family */
 }
-
-
 
 .nav-container {
   max-width: 1200px;
@@ -152,5 +149,589 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ========================
+   Navbar Container
+======================== */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  font-family: "Poppins", sans-serif; /* Added font family */
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ========================
+   Logo
+======================== */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  background: #2563eb;
+  color: #fff;
+  padding: 8px;
+  border-radius: 12px;
+  font-size: 1.5rem;
+}
+
+/* ========================
+   Links
+======================== */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: #e0ebff;
+  color: #2563eb;
+}
+
+/* ========================
+   Buttons
+======================== */
+.nav-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Hide mobile button by default */
+.mobile-btn {
+  display: none;
+}
+
+/* ========================
+   Hamburger Icon
+======================== */
+.hamburger {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* ========================
+   Responsive Design
+======================== */
+@media (max-width: 900px) {
+  .nav-container {
+    flex-wrap: wrap;
+  }
+
+  /* Hide desktop button */
+  .desktop-btn {
+    display: none;
+  }
+
+  /* Hamburger visible */
+  .hamburger {
+    display: block;
+    z-index: 1100;
+  }
+
+  /* Links hidden by default */
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    padding: 1.5rem 0;
+    border-top: 1px solid #eee;
+  }
+
+  /* Show when menu open */
+  .nav-links.open {
+    display: flex;
+    animation: slideDown 0.3s ease;
+  }
+
+  /* Mobile button inside dropdown */
+  .mobile-btn {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+}
+
+/* Slide animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌐 Navbar Base */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* 🧭 Container */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.tutorials-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* background: linear-gradient(90deg, #2563eb, #3b82f6); */
+  padding: 0.9rem 1.5rem 0.9rem 0.2rem; /* Increased right padding */
+}
+
+/* 🎯 Button Styling */
+.tutorials-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  color: #2563eb;
+  font-weight: 600;
+  border-radius: 2rem;
+  padding: 0.6rem 1.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tutorials-btn:hover {
+  background: #2563eb;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: row;
+    padding: 0.8rem 1rem;
+  }
+
+  .tutorials-btn-container {
+    padding: 0.8rem 2rem 0.8rem 0.5rem; /* more right padding for mobile */
+  }
+
+  .tutorials-btn {
+    font-size: 0.95rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .tutorial-icon {
+    font-size: 1.2rem;
+  }
+}
+
+.tutorial-icon {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 480px) {
+  .tutorials-btn-container {
+    padding: 0.7rem 2.5rem 0.7rem 0.5rem; /* further increase right padding */
+  }
+
+  .tutorials-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .tutorial-icon {
+    font-size: 1.1rem;
+  }
+}
+
+.tutorials-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* background: linear-gradient(90deg, #2563eb, #3b82f6); */
+  padding: 0.9rem 1.5rem 0.9rem 0rem; /* 🚫 Left padding removed */
+}
+
+.tutorials-btn:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+.tutorial-icon {
+  font-size: 1.4rem;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .tutorials-btn-container {
+    padding: 0.8rem 2rem 0.8rem 0rem; /* 🚫 Left padding remains 0 */
+  }
+
+  .tutorials-btn {
+    font-size: 0.95rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .tutorial-icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutorials-btn-container {
+    padding: 0.7rem 2.5rem 0.7rem 0rem; /* 🚫 Left padding stays 0 */
+  }
+
+  .tutorials-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .tutorial-icon {
+    font-size: 1.1rem;
+  }
+}
+
+.tutorials-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  /* background: linear-gradient(90deg, #2563eb, #3b82f6); */
+  padding: 0.9rem 1.5rem 0.9rem 0rem; /* left 0 */
+}
+
+.tutorials-btn:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+.tutorial-icon {
+  font-size: 1.4rem;
+}
+
+/* 🧩 Popup Grid on Hover */
+.tutorials-popup {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111827;
+  border-radius: 1rem;
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  padding: 1.2rem;
+  width: 90%;
+  max-width: 650px;
+  z-index: 10;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.3s ease;
+}
+
+.tutorial-card {
+  background: #1f2937;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  padding: 1.2rem;
+  border-radius: 0.7rem;
+  text-align: center;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tutorial-card:hover {
+  background: #2563eb;
+  transform: translateY(-4px);
+}
+
+/* ✨ Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .tutorials-popup {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    width: 95%;
+  }
+
+  .tutorial-card {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutorials-popup {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+
+  .tutorial-card {
+    padding: 0.9rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* 🎬 Watch Tutorials Button */
+.tutorials-btn-container {
+  position: relative;
+  display: inline-block;
+  padding-left: 10px; /* reduced left padding */
+}
+
+.tutorials-btn:hover {
+  background: linear-gradient(90deg, #00bfff, #38bdf8);
+  transform: translateY(-2px);
+}
+
+/* 🎥 Icon size reduced slightly */
+.tutorial-icon {
+  font-size: 1.1rem; /* smaller icon */
+}
+
+.tutorials-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #111827;
+  color: #fff;
+  padding: 8px 14px;
+  /* border-radius: 2rem; */
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  /* font-weight: 500; */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.tutorials-btn {
+  background-color: #ffffff; /* White background */
+  color: #1e293b; /* Dark text */
+  border: 1px solid #cbd5e1; /* Light gray border */
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.tutorials-btn:hover {
+  background-color: #f1f5f9; /* Slight gray hover */
+}
+
+.tutorial-card:hover {
+  background: #f1f5f9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🟣 Auth Buttons (Login / Signup) */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.login-btn,
+.signup-btn {
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* 🟢 Login Button */
+.login-btn {
+  background-color: #1e293b;
+  color: white;
+  border: 1px solid #1e293b;
+}
+
+.login-btn:hover {
+  background-color: #334155;
+}
+
+/* 🔵 Signup Button */
+.signup-btn {
+  /* background-color: transparent; */
+  background-color: #1e293b;
+
+  color: white;
+  border: 1px solid #334155;
+}
+
+.signup-btn:hover {
+  background-color: #334155;
+}
+
+/* 📱 Responsive Auth Buttons */
+@media (max-width: 768px) {
+  .auth-buttons {
+    display: none; /* Hide on mobile */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===============================
+   🔹 EduLearn Logo Styling
+================================ */
+.nav-logo-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-logo-icon {
+  font-size: 1.8rem;
+  color: #2563eb; /* blue accent */
+}
+
+.nav-logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: 0.5px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 🌙 Dark theme ready */
+body.dark .nav-logo-text {
+  color: #f8fafc;
+}
+
+/* 📱 Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-logo-icon {
+    font-size: 1.6rem;
+  }
+  .nav-logo-text {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-logo {
+    gap: 6px;
+  }
+  .nav-logo-icon {
+    font-size: 1.4rem;
+  }
+  .nav-logo-text {
+    font-size: 1.1rem;
   }
 }

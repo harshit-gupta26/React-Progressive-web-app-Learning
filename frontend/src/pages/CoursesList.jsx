@@ -44,7 +44,6 @@ const coursesData = [
     students: 2847,
     image:
       "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=600",
-
   },
 
   {
@@ -198,10 +197,6 @@ const CoursesList = () => {
 
   return (
     <section className="courses-list-section">
- 
-
-
-
       {/* Filter Section */}
       <div className="course-filter-section">
         <div className="filter-container">
@@ -258,7 +253,13 @@ const CoursesList = () => {
       <div className="courses-grid">
         {filteredCourses.length > 0 ? (
           filteredCourses.map((course) => (
-            <div className="course-card" key={course.id}>
+            // <div className="course-card" key={course.id}>
+            <div
+              className="course-card"
+              key={course.id}
+              onClick={() => navigate(`/course/${course.id}`)}
+              style={{ cursor: "pointer" }}
+            >
               <img
                 src={course.image}
                 alt={course.title}
@@ -299,7 +300,11 @@ const CoursesList = () => {
 
                 <button
                   className="enroll-btn"
-                  onClick={() => setSelectedCourse(course)}
+                  onClick={(e) => {
+                    e.stopPropagation(); // prevent card click
+                    setSelectedCourse(course);
+                  }}
+                  onTouchStart={() => setSelectedCourse(course)} // 👈 adds mobile touch support
                 >
                   Enroll Now
                 </button>
@@ -317,21 +322,32 @@ const CoursesList = () => {
         <div className="modal-overlay">
           <div className="modal-content">
             <h2>Enroll in Course</h2>
-            <img src={selectedCourse.image} alt={selectedCourse.title} className="modal-image" />
+            <img
+              src={selectedCourse.image}
+              alt={selectedCourse.title}
+              className="modal-image"
+            />
             <h3>{selectedCourse.title}</h3>
             <p>by {selectedCourse.instructor}</p>
 
             <div className="modal-buttons">
-              <button className="cancel-btn" onClick={() => setSelectedCourse(null)}>
+              <button
+                className="cancel-btn"
+                onClick={() => setSelectedCourse(null)}
+              >
                 Cancel
               </button>
 
               <button
                 className="enroll-btn"
                 onClick={() => {
-                  if (!enrolledCourses.find((c) => c.id === selectedCourse.id)) {
+                  if (
+                    !enrolledCourses.find((c) => c.id === selectedCourse.id)
+                  ) {
                     setEnrolledCourses([...enrolledCourses, selectedCourse]);
-                    alert(`You have successfully enrolled in ${selectedCourse.title}!`);
+                    alert(
+                      `You have successfully enrolled in ${selectedCourse.title}!`
+                    );
                   }
                   setSelectedCourse(null);
                   navigate(`/course/${selectedCourse.id}`); // ✅ Go to course details page

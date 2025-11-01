@@ -118,7 +118,3 @@ Make sure you have the following installed:
 ### course content section
 <img width="1645" height="996" alt="src6" src="https://github.com/user-attachments/assets/f2a3a622-7e54-4498-8a1c-95e9b626031d" />
 
-
-
-
-
